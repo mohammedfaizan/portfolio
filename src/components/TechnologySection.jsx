@@ -2,36 +2,26 @@ import "../styles/main.css";
 import SkillCategory from "./SkillCategory";
 
 function TechnologySection() {
-  const technologies = {
-    Languages: [
-      { name: "JavaScript", icon: "js" },
-      { name: "TypeScript", icon: "ts" },
-      { name: "Python", icon: "python" },
-      // Add more as needed
-    ],
+  const categoryData = {
     Frontend: [
+      { name: "HTML", icon: "html" },
+      { name: "CSS", icon: "css" },
+      { name: "JavaScript", icon: "js" },
       { name: "React", icon: "react" },
-      { name: "Next.js", icon: "nextjs" },
-      { name: "Tailwind", icon: "tailwind" },
-      // Add more as needed
+      { name: "Tailwind CSS", icon: "tailwind" },
     ],
     Backend: [
-      { name: ".NET", icon: "dotnet" },
+      { name: "Golang", icon: "golang" },
       { name: "Node.js", icon: "nodejs" },
-      { name: "Express", icon: "express" },
-      // Add more as needed
-    ],
-    Databases: [
+      { name: "Express.js", icon: "express" },
       { name: "MongoDB", icon: "mongodb" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MySQL", icon: "mysql" },
-      // Add more as needed
-    ],
-    Tools: [
-      { name: "AWS", icon: "aws" },
       { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Postman", icon: "postman" },
       { name: "Docker", icon: "docker" },
-      // Add more as needed
+      { name: "Netlify", icon: "netlify" },
+      { name: "Render", icon: "render" },
+      { name: "REST APIs", icon: "api" },
     ],
   };
 
@@ -40,12 +30,7 @@ function TechnologySection() {
       <div className="container">
         <h2 className="section-title">Technology</h2>
         <p className="tech-subtitle">Here's what I typically work with.</p>
-
-        <div className="tech-categories">
-          {Object.entries(technologies).map(([category, skills]) => (
-            <SkillCategory key={category} title={category} skills={skills} />
-          ))}
-        </div>
+        <SkillCategory categoryData={categoryData} />
       </div>
     </section>
   );

@@ -1,40 +1,43 @@
 import {
+  SiHtml5,
+  SiCss3,
   SiJavascript,
-  SiTypescript,
-  SiPython,
+  SiGoland,
   SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiDotnet,
   SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiMysql,
   SiGit,
+  SiGithub,
+  SiPostman,
+  SiMongodb,
+  SiExpress,
+  SiNetlify,
+  SiRender,
   SiDocker,
+  SiApollographql,
+  SiTailwindcss,
 } from "react-icons/si";
 import "../styles/main.css";
 
 function SkillIcon({ name, icon }) {
-  // This function maps icon strings to React Icons components
   const getIconComponent = (iconName) => {
     const iconMap = {
+      html: <SiHtml5 className="tech-icon-svg html" />,
+      css: <SiCss3 className="tech-icon-svg css" />,
       js: <SiJavascript className="tech-icon-svg js" />,
-      ts: <SiTypescript className="tech-icon-svg ts" />,
-      python: <SiPython className="tech-icon-svg python" />,
+
       react: <SiReact className="tech-icon-svg react" />,
-      nextjs: <SiNextdotjs className="tech-icon-svg nextjs" />,
-      tailwind: <SiTailwindcss className="tech-icon-svg tailwind" />,
-      dotnet: <SiDotnet className="tech-icon-svg dotnet" />,
       nodejs: <SiNodedotjs className="tech-icon-svg nodejs" />,
-      express: <SiExpress className="tech-icon-svg express" />,
-      mongodb: <SiMongodb className="tech-icon-svg mongodb" />,
-      postgresql: <SiPostgresql className="tech-icon-svg postgresql" />,
-      mysql: <SiMysql className="tech-icon-svg mysql" />,
+      golang: <SiGoland className="tech-icon-svg golang" />,
       git: <SiGit className="tech-icon-svg git" />,
+      github: <SiGithub className="tech-icon-svg github" />,
+      postman: <SiPostman className="tech-icon-svg postman" />,
+      mongodb: <SiMongodb className="tech-icon-svg mongodb" />,
+      express: <SiExpress className="tech-icon-svg express" />,
+      netlify: <SiNetlify className="tech-icon-svg netlify" />,
+      render: <SiRender className="tech-icon-svg render" />,
       docker: <SiDocker className="tech-icon-svg docker" />,
-      // Add more icons as needed
+      api: <SiApollographql className="tech-icon-svg api" />,
+      tailwind: <SiTailwindcss className="tech-icon-svg tailwind" />,
     };
 
     return iconMap[iconName] || <div className="placeholder-icon"></div>;

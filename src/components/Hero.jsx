@@ -1,4 +1,5 @@
 import "../styles/main.css";
+import MyPicture from "../assets/myPicture.jpg";
 
 function Hero() {
   return (
@@ -6,18 +7,17 @@ function Hero() {
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I am <span className="accent-text">Your Name</span>
+            Hi, I am <span className="accent-text">Mohammed Faizan</span>
           </h1>
           <p className="hero-description">
-            a senior-year Computer Science student specializing in full-stack
-            development with a strong focus on frontend technologies. My
-            expertise includes working with React, Node.js, and modern web
-            frameworks.
+            A full-stack developer with a strong focus on frontend technologies.
+            I work with HTML, CSS, JavaScript, React, and Node.js, and enjoy
+            bringing user interfaces to life with clean, responsive designs.
           </p>
           <p className="hero-description">
-            I love designing, developing, and deploying apps from start to
-            finish. When I'm not coding, you'll find me [your
-            hobbies/interests].
+            On the backend, I’ve built and deployed robust APIs using Golang,
+            Node.js, MongoDB, and Mongoose. I’m comfortable using tools like
+            Git, GitHub, Postman, and deploying apps with Netlify and Render..
           </p>
           <div className="hero-cta">
             <a href="#projects" className="cta-button">
@@ -26,10 +26,10 @@ function Hero() {
           </div>
         </div>
         <div className="hero-image">
-          {/* You can add your avatar/logo here */}
           <div className="avatar-container">
-            {/* Replace with your own avatar or icon */}
-            <div className="avatar-placeholder"></div>
+            <div className="avatar-placeholder">
+              <img src={MyPicture} alt="mohammed faizan" />
+            </div>
           </div>
         </div>
       </div>

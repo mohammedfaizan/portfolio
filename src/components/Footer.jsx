@@ -1,22 +1,14 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/main.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-container">
-        <div className="footer-copyright">© Your Name</div>
+        <div className="footer-copyright">© Mohammed Faizan</div>
         <div className="footer-social">
           <a
-            href="https://instagram.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-link"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/mohammed-faizan-439678202/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -24,14 +16,14 @@ function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/mohammedfaizan"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
           >
             <FaGithub />
           </a>
-          <a href="mailto:your.email@example.com" className="social-link">
+          <a href="mailto:faizan1999.in@gmail.com" className="social-link">
             <FaEnvelope />
           </a>
         </div>
