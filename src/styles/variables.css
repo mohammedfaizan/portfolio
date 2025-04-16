@@ -1,0 +1,9 @@
+:root {
+  --background: #000000;
+  --card-bg: #121212;
+  --primary-text: #ffffff;
+  --secondary-text: #a0a0a0;
+  --accent-color: #4ce19e; /* Green accent from the portfolio */
+  --accent-secondary: #ff3e8a; /* Pink accent for highlights */
+  --border-color: #333333;
+}
