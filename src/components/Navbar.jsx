@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/main.css";
+import myLogo from "../assets/logowhitecropped-removebg-preview.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo">
-          {/* You can add your logo here */}
+          <img src={myLogo} alt="name logo" width={65} height={50} />
         </Link>
 
         <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>

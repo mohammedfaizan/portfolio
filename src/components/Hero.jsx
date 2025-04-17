@@ -21,7 +21,7 @@ function Hero() {
           </p>
           <div className="hero-cta">
             <a href="#projects" className="cta-button">
-              Let's create something great together!
+              checkout my cv
             </a>
           </div>
         </div>
