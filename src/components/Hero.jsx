@@ -1,5 +1,6 @@
 import "../styles/main.css";
 import MyPicture from "../assets/myPicture.jpg";
+import myResume from "../assets/mohammed_faizan_resume.pdf";
 
 function Hero() {
   return (
@@ -20,7 +21,11 @@ function Hero() {
             Git, GitHub, Postman, and deploying apps with Netlify and Render..
           </p>
           <div className="hero-cta">
-            <a href="#projects" className="cta-button">
+            <a
+              href={myResume}
+              download="mohammed_faizan_resume.pdf"
+              className="cta-button"
+            >
               checkout my cv
             </a>
           </div>
