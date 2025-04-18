@@ -267,6 +267,7 @@ a {
   mask-composite: exclude;
 }
 
+/* Duplicated hero-container styles - keeping the second set */
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -274,11 +275,13 @@ a {
   padding: 2rem;
 }
 
+/* Duplicated hero-image styles - keeping the second set */
 .hero-image {
   flex: 1;
   text-align: center;
 }
 
+/* Duplicated avatar-container styles - keeping the second set */
 .avatar-container {
   width: 200px; /* Adjust the width as needed */
   height: 200px; /* Adjust the height to maintain a square aspect ratio */
@@ -293,11 +296,13 @@ a {
   object-fit: cover; /* Ensure the image covers the area fully and doesn't get stretched */
 }
 
+/* Duplicated hero-title styles - keeping the second set */
 .hero-title {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
+/* Duplicated hero-description styles - keeping the second set */
 .hero-description {
   font-size: 1.2rem;
   margin-top: 1rem;
@@ -333,16 +338,29 @@ a {
   font-size: 1.1rem;
 }
 
-.tech-categories {
+/* This rule seems redundant with .skill-categories-grouped below */
+/* .tech-categories {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .tech-categories {
     grid-template-columns: 1fr;
   }
+} */
+
+/* Skill Category Styles */
+/* Container for the skill categories */
+.skill-categories-grouped {
+  /* Removed grid layout for vertical stacking */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
+  /* gap: 2rem; */
+
+  /* Removed perspective from here */
+  /* perspective: 1000px; */
 }
 
 /* Skill Category Styles */
@@ -351,6 +369,11 @@ a {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Keep margin for vertical stacking */
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
 }
 
 .category-title {
@@ -368,8 +391,13 @@ a {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(80px, 1fr)
+  ); /* Adjust minmax for icon size */
   gap: 1.5rem;
+  perspective: 800px; /* Add perspective HERE for the icon flip */
+  padding-top: 1rem; /* Add some padding if needed */
 }
 
 /* Skill Icon Styles */
@@ -378,6 +406,8 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  /* Remove transform/opacity transitions if they exist here */
+  /* transition: transform 0.3s ease, opacity 0.3s ease; */
 }
 
 .icon-container {
@@ -443,6 +473,38 @@ a {
 .docker {
   color: #2496ed;
 }
+.golang {
+  /* Added missing Golang color */
+  color: #00add8;
+}
+.html {
+  /* Added missing HTML color */
+  color: #e34f26;
+}
+.css {
+  /* Added missing CSS color */
+  color: #1572b6;
+}
+.github {
+  /* Added missing GitHub color */
+  color: #ffffff; /* Or #181717 if on light bg */
+}
+.postman {
+  /* Added missing Postman color */
+  color: #ff6c37;
+}
+.netlify {
+  /* Added missing Netlify color */
+  color: #00c7b7;
+}
+.render {
+  /* Added missing Render color */
+  color: #46e3b7;
+}
+.api {
+  /* Added missing API/GraphQL color */
+  color: #e10098;
+}
 
 .placeholder-icon {
   width: 32px;
@@ -452,64 +514,59 @@ a {
 }
 
 /* Projects Section Styles */
+
+/* Note: There are conflicting styles for .projects-section and .projects-grid */
+/* Keeping the Grid styles as they were likely the last intended state */
+
+/* --- Projects Section - Grid Styles --- */
+
+.projects-section {
+  padding: 4rem 0; /* Restore padding if changed */
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 2rem; /* Adjust gap */
+  margin-bottom: 3rem; /* Space before 'View All' button */
 }
 
-.view-all-container {
-  display: flex;
-  justify-content: center;
-}
-
-.view-all-btn {
-  display: inline-block;
-  background-color: rgba(76, 225, 158, 0.1);
-  color: var(--accent-color);
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
-  border: 1px solid var(--accent-color);
-  transition: all 0.3s ease;
-}
-
-.view-all-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--background);
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Project Card Styles */
+/* Ensure Project Card styles work well in a grid */
 .project-card {
-  height: 100%;
+  height: 100%; /* Fill grid cell height */
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Remove transition if Framer Motion handles it, or keep for hover */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
+
+/* Optional: Add back hover effect if desired */
+/* .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+} */
 
 .project-image {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 200px; /* Or use aspect-ratio */
+  /* aspect-ratio: 16 / 9; */
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  /* transition: transform 0.5s ease; */ /* Optional hover zoom */
 }
 
-.project-card:hover .project-image img {
+/* .project-card:hover .project-image img {
   transform: scale(1.05);
-}
+} */
 
 .project-content {
   padding: 1.5rem;
@@ -558,6 +615,45 @@ a {
   color: var(--accent-color);
 }
 
+/* Styles for the view all button container */
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0; /* Adjust padding if needed */
+  /* Remove background-color if it was added for sticky */
+  /* background-color: var(--background); */
+  /* Remove z-index if added */
+  /* z-index: 5; */
+  /* Remove position: relative if added */
+  /* position: relative; */
+}
+
+.view-all-btn {
+  display: inline-block;
+  background-color: rgba(76, 225, 158, 0.1);
+  color: var(--accent-color);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--background);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .all-projects-grid {
+    /* Added media query for all-projects-grid */
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer Styles */
 .footer {
   border-top: 1px solid var(--border-color);
@@ -599,16 +695,18 @@ a {
 
 /* Contact Page Styles */
 .contact-section {
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
   display: flex;
   align-items: center;
+  padding: 4rem 0; /* Added padding */
 }
 
-.contact-container {
+/* This rule seems redundant with .contact-grid below */
+/* .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-}
+} */
 
 .contact-info {
   padding: 2rem;
@@ -638,13 +736,15 @@ a {
   color: var(--accent-color);
 }
 
-.contact-form {
+/* This rule seems redundant with .contact-grid below */
+/* .contact-form {
   padding: 2rem;
   background-color: var(--card-bg);
   border-radius: 8px;
-}
+} */
 
-.form-group {
+/* These rules seem redundant with .contact-grid form styles below */
+/* .form-group {
   margin-bottom: 1.5rem;
 }
 
@@ -672,7 +772,7 @@ a {
 textarea.form-control {
   min-height: 150px;
   resize: vertical;
-}
+} */
 
 .submit-btn {
   background-color: var(--accent-color);
@@ -683,6 +783,7 @@ textarea.form-control {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid transparent; /* Added for consistent hover transition */
 }
 
 .submit-btn:hover {
@@ -691,11 +792,11 @@ textarea.form-control {
   border: 1px solid var(--accent-color);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 /* Projects Page Styles */
 .projects-page {
@@ -719,19 +820,23 @@ textarea.form-control {
   gap: 2rem;
 }
 
-@media (max-width: 768px) {
-  .all-projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Contact Grid Layout */
 .contact-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr; /* Form takes more space */
   gap: 2rem;
+  background-color: var(--card-bg); /* Apply background to the grid container */
+  padding: 2rem; /* Add padding to the grid container */
+  border-radius: 8px; /* Add border-radius */
 }
 
-.contact-form form {
+.contact-form-container {
+  /* Added container for form elements */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-container form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -753,9 +858,10 @@ textarea.form-control {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.05); /* Match other form style */
   color: var(--primary-text);
   font-size: 1rem;
+  font-family: inherit; /* Ensure font consistency */
 }
 
 .form-group input:focus,
@@ -764,8 +870,16 @@ textarea.form-control {
   border-color: var(--accent-color);
 }
 
+.form-group textarea {
+  /* Allow textarea resizing */
+  resize: vertical;
+  min-height: 120px;
+}
+
 .contact-info {
-  padding: 2rem;
+  padding: 0; /* Remove padding if parent .contact-grid has it */
+  background-color: transparent; /* Remove background if parent has it */
+  border-radius: 0; /* Remove border-radius if parent has it */
 }
 
 .contact-info h3 {
@@ -786,5 +900,9 @@ textarea.form-control {
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+  .contact-info {
+    /* Add margin top on mobile */
+    margin-top: 2rem;
   }
 }
